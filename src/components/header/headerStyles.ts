@@ -12,7 +12,6 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
 `;
 
 export const LogoContainer = styled.div`
@@ -47,7 +46,7 @@ export const ButtonContainer = styled.div`
   height: 45px;
   gap: 0px;
   border-radius: 8px 8px 8px 8px;
-
+  cursor: pointer;
   background-color: #ffffff;
 `;
 
@@ -59,4 +58,11 @@ export const ShoppingCart = styled.img`
   gap: 0px;
 `;
 
-export const CartQty = styled.div``;
+export const CartQty = styled.div`
+  font-family: "Montserrat", Times, serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: left;
+  margin-right: 12px;
+  color: #000;
+`;

@@ -2,8 +2,10 @@ import { Container, LogoContainer, LogoMain, LogoSub, ButtonContainer, ShoppingC
 
 
 import CartIcon from "../../assets/cartIcon.png";
+import { useShoppingCart } from "../../context/ShoppingCartContext";
 
 function Header() {
+  const {openCart, cartQuantity} = useShoppingCart()
 
   return (
     <Container>
@@ -15,11 +17,12 @@ function Header() {
           Sistemas
         </LogoSub>
       </LogoContainer>
-      <ButtonContainer>
+      
+      <ButtonContainer onClick={openCart}>
         <ShoppingCart  alt="" src={CartIcon} />
         
         <CartQty>
-
+          {cartQuantity}
         </CartQty>
       </ButtonContainer>
     </Container>

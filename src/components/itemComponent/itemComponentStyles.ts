@@ -81,6 +81,7 @@ export const BuyButton = styled.div`
   background-color: #0f52ba;
   border-radius:  0 0 12px 12px;
   position: absolute;
+  cursor: pointer;
   bottom: 0;
 `;
 

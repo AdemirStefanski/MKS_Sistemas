@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: auto;
-  position: sticky;
-  top: 101px;
   max-width: 1600px;
   display: grid;
   grid-template-columns: repeat(4, minmax(12em, 14em));

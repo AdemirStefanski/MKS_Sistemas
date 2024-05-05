@@ -12,6 +12,7 @@ import {
 } from "./itemComponentStyles";
 
 import BagIcon from "../../assets/shoppingBagIcon.png";
+import { useShoppingCart } from "../../context/ShoppingCartContext";
 
 interface Props {
   id: number;
@@ -62,7 +63,6 @@ interface Props {
 //   );
 // }
 
-
 // function ItemComponent({item}: any) {
 //   return (
 //     <Container>
@@ -83,6 +83,14 @@ interface Props {
 // }
 
 function ItemComponent(props: Props) {
+  const {
+    getItemQuantity,
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    removeFromCart,
+  } = useShoppingCart();
+  const quantity: number = getItemQuantity(props.id);
+
   return (
     <Container>
       <ImageBanner src={props.photo} />
@@ -93,7 +101,7 @@ function ItemComponent(props: Props) {
         </PriceContainer>
       </NamePriceContainer>
       <DescriptionContainer>{props.description}</DescriptionContainer>
-      <BuyButton>
+      <BuyButton onClick={() => increaseCartQuantity(props.id)}>
         <BagContainer src={BagIcon} />
         <BuyContainer>COMPRAR</BuyContainer>
       </BuyButton>

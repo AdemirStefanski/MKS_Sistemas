@@ -26,31 +26,32 @@ function Home() {
       .catch((err) => console.log(err));
   }, []);
 
-
   //função para padronizar a variável "price" ao padrão brasileiro(com ponto separando os milhares e caso se trabalhe com casas decimais usar vírgula);
-  function formatNumber(n:any) {
+  function formatNumber(n: any) {
     let t = [];
-    let p:any;
-    let ts:any;
-    let dp:any;
-    
+    let p: any;
+    let ts: any;
+    let dp: any;
+
     //caso precise usar casas decimais trocar o valor de "p" para "2";
-    if (typeof p  == 'undefined') p  = 0;
-    if (typeof ts == 'undefined') ts = '.';
-    if (typeof dp == 'undefined') dp = ',';
-  
+    if (typeof p == "undefined") p = 0;
+    if (typeof ts == "undefined") ts = ".";
+    if (typeof dp == "undefined") dp = ",";
+
     // Get number and decimal part of n
-    n = Number(n).toFixed(p).split('.');
-  
-    
-    for (var iLen = n[0].length, i = iLen? iLen % 3 || 3 : 0, j = 0; i <= iLen; i+=3) {
+    n = Number(n).toFixed(p).split(".");
+
+    for (
+      var iLen = n[0].length, i = iLen ? iLen % 3 || 3 : 0, j = 0;
+      i <= iLen;
+      i += 3
+    ) {
       t.push(n[0].substring(j, i));
       j = i;
     }
-    
-    return t.join(ts) + (n[1]? dp + n[1] : '');
+
+    return t.join(ts) + (n[1] ? dp + n[1] : "");
   }
-  
 
   return (
     <Container>
@@ -77,7 +78,5 @@ interface item {
   createdAt: string;
   updatedAt: string;
 }
-
-
 
 export default Home;
